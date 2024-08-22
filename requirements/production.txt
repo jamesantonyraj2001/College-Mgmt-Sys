@@ -1,0 +1,8 @@
+
+-r base.txt
+
+gunicorn==20.1.0 
+psycopg2==2.9.5  
+
+django-storages[boto3]==1.13.1  
+django-anymail[amazon_ses]==9.0 
