@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i> Pay fees</div>
+
+{% for msg in messages %}
+<div class="alert alert-success">
+  <i class="fas fa-check-circle"></i>{{msg}}
+</div> 
+{% endfor %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card pb-3">
+            <p class="form-title"> Pay Fees</p>
+            <div class="container"><br>
+                <form action="" method="POST">{% csrf_token %}
+       
+                {{ form.as_p }}
+                <button type="submit" style="color: whitesmoke; background-color: blue;border-radius: 20%;">Add Payment</button>
+                </form>
+    
+                        
+             </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

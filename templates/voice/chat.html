@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+</head>
+<body>
+    <h1>Chat Room: {{ room.name }}</h1>
+    <ul>
+        {% for message in messages %}
+            <li>{{ message.sender.username }}: {{ message.content }}</li>
+        {% endfor %}
+    </ul>
+    <!-- Add a form for sending messages here -->
+</body>
+</html>

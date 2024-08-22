@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i>Fees_List</div>
+
+<h1>Student_Fees_List</h1>
+<table class="table table-light">
+    <thead>
+  <tr>
+    <th>Student_ID</th><th>Student_Name</th><th>Amount</th><th>Comments</th>
+  </tr>
+
+  </thead>
+   
+        {% for payment in payments %}
+            <tr>
+              <td>{{ payment.student_ID }}</td>
+              <td>{{ payment.student_name }}</td>
+              <td> ₹{{ payment.amount_paid }}</td>
+              <td>{{ payment.comments }}</td>
+            </tr>
+        {% endfor %}
+   
+</table>  
+
+{% endblock %}

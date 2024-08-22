@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i> notification</div>
+
+
+            
+         
+            {% for msg in messages %}
+            <div class="alert alert-success">
+              <i class="fas fa-check-circle"></i>{{msg}}
+            </div> 
+            {% endfor %}
+    <div class="row">
+       <div class="col-md-6 mx-auto">
+             <div class="card pb-3">
+                    <p class="form-title"> Notification</p>
+                    <div class="container"><br>
+            <form method="post">
+              {% csrf_token %}
+             
+              {{ form.as_p }}
+              <button type="submit"style="color: whitesmoke; background-color: blue;border-radius: 1%;">Submit</button>
+            </form>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+          
+{% endblock %}

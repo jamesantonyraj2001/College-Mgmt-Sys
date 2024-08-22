@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i> Pay fees</div>
+
+{% for msg in messages %}
+<div class="alert alert-success">
+  <i class="fas fa-check-circle"></i>{{msg}}
+</div> 
+{% endfor %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card pb-3">
+            <p class="form-title"> send_message</p>
+            <div class="container"><br>
+                
+                <form method="post" action="{{ url }}">
+                    {% csrf_token %}
+                    <!-- other form fields -->
+                    
+                
+                
+                    <label for="content">Message:</label>
+                    <textarea name="content" required></textarea>
+                    
+                    <input type="hidden" name="receiver_id" value="{{ receiver_id }}">
+                    <input type="submit" value="Submit">
+                </form>
+                
+    
+                        
+             </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

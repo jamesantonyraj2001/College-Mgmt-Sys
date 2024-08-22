@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}view_attendence{% endblock title %}
+
+
+{% block content %}
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i> view_attendence</div>
+<div class="table-responsive table-shadow table-light table-striped m-0 mt-5 ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th> ID No. </th>
+                <th> Full Name </th>
+                <th> Email </th>
+                <th> Department </th>
+                <th> Academic Year </th>
+                <th> Semester </th>
+                <th> Subject</th>
+                <th> Status</th>
+                
+            </tr>
+        </thead>
+
+        <tr>
+            <td> 301 </td>
+            <td>James K  </td>
+            <td> jack2001@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> CN </td>
+           <td>Present </td>
+            
+        </tr>
+
+        <tr>
+            <td> 301 </td>
+            <td>James K  </td>
+            <td> jack2001@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> POM </td>
+           <td>Present </td>
+            
+        </tr>
+
+        <tr>
+            <td> 302 </td>
+            <td>Akash M  </td>
+            <td> akash@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> CN </td>
+           <td>Present </td>
+            
+        </tr>
+
+        <tr>
+            <td> 302 </td>
+            <td>Akash M  </td>
+            <td> akash@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> POM </td>
+           <td>Abcent </td>
+            
+        </tr>
+
+        <tr>
+            <td> 303 </td>
+            <td>Gopi M  </td>
+            <td> gopi@gmail.com </td>
+            <td> IT </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> MPMC </td>
+           <td>Present </td>
+            
+        </tr>
+     </table>   
+{% endblock content %}

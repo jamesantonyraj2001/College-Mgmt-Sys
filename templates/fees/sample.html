@@ -1,0 +1,10 @@
+			
+					<li class="{% if request.path == notification %}active{% endif %}">
+						<a href="{% url 'notification'%}"><i class="nav-icon fas fa-bullhorn"></i>Notify Student</a>
+					</li>
+
+
+                    
+			<li class="{% if request.path == view_notification %}active{% endif %}">
+				<a href="{% url 'view_notification' %}"><i class="nav-icon fas fa-bell"></i>View Notifications</a>
+			</li>

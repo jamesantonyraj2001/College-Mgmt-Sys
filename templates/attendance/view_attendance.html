@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<style>
+    .clr{
+        background-color: green;
+        color: aliceblue;
+        border-radius: 1%;
+    }
+    .cls{
+        background-color: red;
+        color: white;
+        border-radius: 1%;
+    }
+</style>
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i>view_attendance</div>
+
+
+            
+         
+            <h3>View_Attendance</h3>
+
+            {% for msg in messages %}
+            <div class="alert alert-success">
+              <i class="fas fa-check-circle"></i>{{msg}}
+          </div> 
+            {% endfor %}
+            <table>
+                <div class="table-responsive p-0 mt-3">
+                  
+                  <table class="table table-light">
+                    <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Class Attended</th>
+                    <th>Department</th>
+                
+                    <th>Date</th>
+                    
+                    <th>Present</th>
+                </tr>
+            </thead>
+                {% for record in attendance_records %}
+                <tr>
+                    <td>{{ record.student }}</td>
+                    <td>{{ record.subject }}</td>
+                    <td>{{ record.department }}</td>
+                    <td>{{ record.date }}</td>
+                    <td>{% if record.is_present %}<i class="clr">Present</i>{% else %}<i class="cls">Absent</i>{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            
+          
+{% endblock %}

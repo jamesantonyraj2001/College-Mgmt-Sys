@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<style>
+    .clr{
+        background-color: green;
+        color: aliceblue;
+        border-radius: 1%;
+    }
+    .cls{
+        background-color: red;
+        color: white;
+        border-radius: 1%;
+    }
+</style>
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i>view_notification</div>
+
+
+            
+         
+            <h3>View_Notification</h3>
+
+            {% for msg in messages %}
+            <div class="alert alert-success">
+              <i class="fas fa-check-circle"></i>{{msg}}
+          </div> 
+            {% endfor %}
+            <table>
+                <div class="table-responsive p-0 mt-3">
+                  
+                  <table class="table table-light">
+                    <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Messages</th>
+                    
+                </tr>
+            </thead>
+                {% for record in notification_records %}
+                <tr>
+                    <td>{{ record.student }}</td>
+                    <td>{{ record.content }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            
+          
+{% endblock %}

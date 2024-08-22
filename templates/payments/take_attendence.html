@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %}take_attendence{% endblock title %}
+
+
+{% block content %}
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i> take_attendence</div>
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'error' %}
+<div class="alert alert-danger">
+    <i class="fas fa-exclamation-circle"></i>{{ message }}
+</div>
+{% else %}
+<div class="alert alert-success">
+    <i class="fas fa-check-circle"></i>{{ message }}
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+<div class="table-responsive table-shadow table-light table-striped m-0 mt-5 ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th> ID No. </th>
+                <th> Full Name </th>
+                <th> Email </th>
+                <th> Department </th>
+                <th> Academic Year </th>
+                <th> Semester </th>
+                <th> Subject</th>
+                <th> Status</th>
+                
+            </tr>
+        </thead>
+
+        <tr>
+            <td> 301 </td>
+            <td>James K  </td>
+            <td> jack2001@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> CN </td>
+            <td><span  class="btn btn-success"><i class="fas fa-pencil-alt"></i>Present</span><span class="btn btn-danger"><i class="fas fa-pencil-alt"></i>Absent</span> </td>
+            
+        </tr>
+
+        <tr>
+            <td> 301 </td>
+            <td>James K  </td>
+            <td> jack2001@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> POM </td>
+            <td><span  class="btn btn-success"><i class="fas fa-pencil-alt"></i>Present</span><span class="btn btn-danger"><i class="fas fa-pencil-alt"></i>Absent</span> </td>
+            
+        </tr>
+
+        <tr>
+            <td> 302 </td>
+            <td>Akash M  </td>
+            <td> akash@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> CN </td>
+            <td><span  class="btn btn-success"><i class="fas fa-pencil-alt"></i>Present</span><span class="btn btn-danger"><i class="fas fa-pencil-alt"></i>Absent</span> </td>
+            
+        </tr>
+
+        <tr>
+            <td> 302 </td>
+            <td>Akash M  </td>
+            <td> akash@gmail.com </td>
+            <td> CSE </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> POM </td>
+            <td><span  class="btn btn-success"><i class="fas fa-pencil-alt"></i>Present</span><span class="btn btn-danger"><i class="fas fa-pencil-alt"></i>Absent</span> </td>
+            
+        </tr>
+
+        <tr>
+            <td> 303 </td>
+            <td>Gopi M  </td>
+            <td> gopi@gmail.com </td>
+            <td> IT </td>
+            <td> 2020 - 2021 </td>
+            <td> First </td>
+            <td> MPMC </td>
+           <td><button class="btn btn-success" onclick="myFunction()"><i class="fas fa-pencil-alt"></i>Present</button> <span class="btn btn-danger"><i class="fas fa-pencil-alt"></i>Absent</span> </td>
+            
+        </tr>
+        
+        </thead>
+    </table>
+
+    <script>
+        function myFunction() {
+  var txt;
+  if (confirm("Press a button!")) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+    </script>
+{% endblock content %}
