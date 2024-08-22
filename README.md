@@ -27,7 +27,7 @@ Current features
 * Custom message displayed for those that pass or fail a quiz
 * Custom permission (view_sittings) added, allowing users with that permission to view quiz results from users
 * A marking page which lists completed quizzes, can be filtered by quiz or user, and is used to mark essay questions
-
+* Student can able to pay their academic year fees.
 # Pre-requisites:
 
 > The following programs are required to run the project
